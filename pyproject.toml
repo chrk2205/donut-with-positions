@@ -1,0 +1,29 @@
+[project]
+name = "donut-positions"
+version = "0.1.0"
+description = "Donut continued pretraining and CORD finetuning with explicit position tokens"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "datasets>=2.19",
+    "kaggle>=1.6",
+    "nltk>=3.8",
+    "pillow>=10",
+    "protobuf>=4",
+    "pyyaml>=6",
+    "pytorch-lightning>=2.2",
+    "sentencepiece>=0.2",
+    "six>=1.16",
+    "torch>=2.2",
+    "transformers>=4.44",
+]
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

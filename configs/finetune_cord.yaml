@@ -1,0 +1,20 @@
+stage: finetune
+model_name: naver-clova-ix/donut-base
+# Used when the folder exists. Otherwise training starts from donut-base
+# with the position tokens added. A Kaggle input checkpoint is picked up too.
+init_checkpoint: outputs/pretrain/model
+image_size: [1280, 960]
+pos_bins: 512
+max_length: 768
+max_epochs: 10
+max_steps: -1
+train_batch_size: 1
+lr: 3.0e-5
+num_workers: 0
+seed: 0
+train_split: train
+val_split: validation
+annotation_zip: null
+result_dir: outputs/finetune
+eval_max_samples: 100
+gen_max_new_tokens: 768

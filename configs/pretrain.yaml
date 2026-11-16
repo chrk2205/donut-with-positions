@@ -1,0 +1,20 @@
+stage: pretrain
+model_name: naver-clova-ix/donut-base
+init_checkpoint: null
+# Donut's CORD resolution. The list is [height, width].
+image_size: [1280, 960]
+pos_bins: 512
+max_length: 1536
+max_epochs: 3
+max_steps: -1
+train_batch_size: 1
+lr: 3.0e-5
+num_workers: 0
+seed: 0
+data_dir: data/synthdog
+train_samples: 8000
+val_samples: 400
+generate_if_missing: true
+result_dir: outputs/pretrain
+eval_max_samples: 32
+gen_max_new_tokens: 256
